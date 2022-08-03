@@ -1,0 +1,16 @@
+﻿    • O que é Spring Boot Framework?
+
+Framework é uma ferramenta muito utilizada em diversas áreas da programação que otimiza o trabalho das pessoas desenvolvedoras, fazendo com que ele seja focado no desenvolvimento do projeto e não nos processos de configuração e padronização.
+Vale ressaltar que antes de mergulhar num framework é altamente recomendável que você estude e conheça bem os fundamentos da linguagem que quer explorar. Isso vai fazer com que seu aprendizado e crescimento no estudo do framework seja mais fluido e que não seja necessário voltar nos conceitos da linguagem para entender o que de fato aconteceu caso ocorra um comportamento não esperado.
+
+
+    • Quais são os benefícios e recursos que Spring Boot fornece?
+
+Uma das maiores vantagens que o Spring Boot trouxe ao desenvolvimento é que toda essa configuração não necessita mais ser realizada pelos temidos XMLs, embora ele ainda suporte esse tipo de configuração. A maior parte da configuração pode ser feita de forma programática via anotações.
+    • Como é feita a adição de novas dependências (JPA, Hibernate, etc…) ?
+Muitos confundem a diferença entre o Hibernate e o JPA. O Hibernate é de fato o framework ORM, ou seja, a implementação física do que você usará para persistir, remover, atualizar ou buscar dados no SGBD. Por outro lado, o JPA é uma camada que descreve uma interface comum para frameworks ORM. Você pode desenvolver todo seu sistema sem JPA, apenas com Hibernate ou qualquer outro framework ORM, como o TopLink. Porém você não pode desenvolver o sistema apenas com JPA, pois ele é apenas uma interface a ser utilizada por Frameworks ORM. A ideia geral é tornar o sistema o mais abstrato possível e passível de mudanças sem grandes impactos. Se você desenvolver todo seu sistema usando JPA com o framework Hibernate e amanhã decide mudar para o TopLink, então as alterações serão mínimas.
+
+    • Na sua opinião, qual é a melhor IDE para trabalhar com o Spring Boot: Spring Tools Suites, IntelliJ IDEA, Eclipse ou NetBeans ?
+      Intellij IDEA
+    • O que é Spring Initializr?
+SPRING INITIALIZR fornece uma interface web bem simples para o usuário. Podendo gerar seu projeto a partir de uma estrutura de configurações pré-moldadas. São configurações de versões do java/spring boot, grupo/nome do projeto, série de lista de dependências e etc.
