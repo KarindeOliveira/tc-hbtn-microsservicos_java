@@ -47,7 +47,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "- Responsável por atualizar um produto.")
-    @ApiResponse(code = 10 , message = "Required fields not informed.")
+    @ApiResponse(code = 10 , message = "No information has been updated. The new information is the same as recorded in the database.")
     @PutMapping("/updateProduct")
     public void updateProduct(@RequestBody Product product) {
         repository.updateProduct(product);
