@@ -19,7 +19,7 @@ public class ProductController {
     ProductRepository repository;
 
 
-    @ApiOperation(value= "- Responsável por retornar uma mensagem de boas vindas. ")
+    @ApiOperation(value= "- Responsável por retornar uma mensagem de boas vindas.")
     @GetMapping(value = "/welcome")
     public String welcome() {
         return "BEM VINDO À PRODUCT REST API.";
@@ -39,7 +39,14 @@ public class ProductController {
         return repository.getProductById(id);
     }
 
-    @ApiOperation(value = "- Responsável por adicionar um produto. ")
+    @ApiOperation(value = "- Responsável por adicionar um produto.")
+    @ApiResponse(code = 10 , message = "Required fields not informed.")
+    @PostMapping("/addProduct")
+    public void addProduct(@RequestBody Product product) {
+        repository.addProduct(product);
+    }
+
+    @ApiOperation(value = "- Responsável por atualizar um produto.")
     @ApiResponse(code = 10 , message = "Required fields not informed.")
     @PutMapping("/updateProduct")
     public void updateProduct(@RequestBody Product product) {
