@@ -24,6 +24,12 @@ public class ProductController {
     public String welcome() {
         return "BEM VINDO À PRODUCT REST API.";
     }
+    @ApiOperation(value = "- Responsável por adicionar um produto.")
+    @ApiResponse(code = 10 , message = "Required fields not informed.")
+    @PostMapping("/addProduct")
+    public void addProduct(@RequestBody Product product) {
+        repository.addProduct(product);
+    }
 
     @ApiOperation(value= "- Responsável por retornar uma lista de produtos.")
     @ApiResponse(code = 11,  message = "Warning - the process returned more than 1000 products.")
@@ -39,24 +45,19 @@ public class ProductController {
         return repository.getProductById(id);
     }
 
-    @ApiOperation(value = "- Responsável por adicionar um produto.")
-    @ApiResponse(code = 10 , message = "Required fields not informed.")
-    @PostMapping("/addProduct")
-    public void addProduct(@RequestBody Product product) {
-        repository.addProduct(product);
-    }
-
-    @ApiOperation(value = "- Responsável por atualizar um produto.")
-    @ApiResponse(code = 10 , message = "No information has been updated. The new information is the same as recorded in the database.")
-    @PutMapping("/updateProduct")
-    public void updateProduct(@RequestBody Product product) {
-        repository.updateProduct(product);
-    }
-
     @ApiOperation(value = "- Responsável por remover um produto.")
     @ApiResponse(code = 13 , message = "User not allowed to remove a product from this category.")
     @DeleteMapping("/removeProduct")
     public void removeProduct(@RequestBody Product product) {
         repository.removeProduct(product);
     }
+
+
+    @ApiOperation(value = "- Responsável por atualizar um produto.")
+    @ApiResponse(code = 14 , message = "No information has been updated. The new information is the same as recorded in the database.")
+    @PutMapping("/updateProduct")
+    public void updateProduct(@RequestBody Product product) {
+        repository.updateProduct(product);
+    }
+
 }
